@@ -35,10 +35,10 @@
           </div>
           <div class="span1">
             <% if ff.object.persisted? %>
-              <%= link_to 'Delete', nil, class: "btn btn-danger delete-association", onclick: "hideSection(#{i});return false;" %>
+              <%= link_to 'Delete', nil, class: "btn btn-danger delete-association" %>
               <%= ff.check_box :_destroy, class: "destroy", hidden: true %>
             <% else %>
-              <%= link_to 'Delete', nil, class: "btn btn-danger flush-association", onclick: "hideSection(#{i});return false;" %>
+              <%= link_to 'Delete', nil, class: "btn btn-danger flush-association"%>
             <% end %>
           </div>
         </div>
@@ -46,10 +46,10 @@
       <% i += 1 %>
     <% end %>
   </div>
-  <%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, nil, class: "btn btn-success new-association", "data-index" => i, onclick: "displayEmptyRow('inline');return false;" %>
+  <%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, nil, class: "btn btn-success new-association", "data-index" => i %>
 
 
   <div class="actions">
-    <%= f.submit class: "btn", id: "save_btn", onclick: "disableButton();  return true;" %>
+    <%= f.submit class: "btn", id: "save_btn" %>
   </div>
 <% end %>

@@ -15,21 +15,29 @@
 //= require d3
 //= require_tree .
 
-function disableFunction() {
-  document.getElementById("save_btn").disabled = true;
-}
+$(function() {
+  deleteEmptyRow();
+  $(".new-association").on("click", addRow);
+  $("#update_course_button").on("click", disableButton);
+  $(".delete-association").on("click", deleteSection);
+});
+
 function disableButton() {
-  setTimeout(disableFunction, 1);
+  setTimeout(function() {
+    $("#save_btn").attr("disabled", "disabled")
+  }, 1);
 }
 
-function displayEmptyRow(displayType) {
-  var section= document.getElementById("table");
-  section.lastElementChild.style.display = displayType;
+function deleteEmptyRow() {
+  $("#table").children().last().css("display", "none");
+}
+function addRow() {
+  $("#table").children().last().css("display", "inline");
+  return false;
 }
 
 
-function hideSection(i) {
-  var row = document.getElementById(i);
-  row.style.display = "none";
-
+function deleteSection(event) {
+  $(event.target).closest(".association").css("display", "none");
+  return false;
 }
