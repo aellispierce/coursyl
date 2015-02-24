@@ -36,5 +36,5 @@ function hideSection(i) {
 
 function smoothScroll(location) {
   element_to_scroll_to = document.getElementById(location);
-  element_to_scroll_to.scrollIntoView();
+  alert("I have failed.")
 }
