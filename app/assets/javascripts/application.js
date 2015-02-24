@@ -14,3 +14,29 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function disableFunction() {
+  document.getElementById("save_btn").disabled = true;
+}
+function disableButton() {
+  setTimeout(disableFunction, 1);
+}
+
+function hideEmptyRow() {
+  var table= document.getElementById("table");
+  table.lastElementChild.style.display = "none";
+}
+
+
+function hideSection(i) {
+  var row = document.getElementById(i);
+  row.style.display = "none";
+
+}
+
+function smoothScroll(location) {
+  element_to_scroll_to = document.getElementById(location);
+  element_to_scroll_to.scrollIntoView();
+}
+
+document.onload= hideEmptyRow();
