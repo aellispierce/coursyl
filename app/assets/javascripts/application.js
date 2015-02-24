@@ -33,8 +33,3 @@ function hideSection(i) {
   row.style.display = "none";
 
 }
-
-function smoothScroll(location) {
-  element_to_scroll_to = document.getElementById(location);
-  alert("I have failed.")
-}
