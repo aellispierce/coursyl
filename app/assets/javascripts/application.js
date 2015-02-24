@@ -22,9 +22,9 @@ function disableButton() {
   setTimeout(disableFunction, 1);
 }
 
-function hideEmptyRow() {
-  var table= document.getElementById("table");
-  table.lastElementChild.style.display = "none";
+function displayEmptyRow(displayType) {
+  var section= document.getElementById("table");
+  section.lastElementChild.style.display = displayType;
 }
 
 
@@ -38,5 +38,3 @@ function smoothScroll(location) {
   element_to_scroll_to = document.getElementById(location);
   element_to_scroll_to.scrollIntoView();
 }
-
-document.onload= hideEmptyRow();

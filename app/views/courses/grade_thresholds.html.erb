@@ -19,7 +19,7 @@
     number grade which earns that letter.  For instance, a 10 point scale starts with (A, 90)
     and ends with (F, 0).  Feel free to add grades like (B+, 87).</p>
   <% i = 0 %>
-  <div class="associations">
+  <div class="associations", id= "table">
     <%= f.fields_for :grade_thresholds do |ff| %>
       <div class="association container">
         <div class="row", id= <%= i %>>
@@ -46,7 +46,7 @@
       <% i += 1 %>
     <% end %>
   </div>
-  <%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, nil, class: "btn btn-success new-association", "data-index" => i %>
+  <%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, nil, class: "btn btn-success new-association", "data-index" => i, onclick: "displayEmptyRow('inline');return false;" %>
 
 
   <div class="actions">
