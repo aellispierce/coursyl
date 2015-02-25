@@ -1,4 +1,52 @@
 <% if assignment.status(current_user).name != "Future" %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    <i class="fa fa-calendar-o"></i>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <head>
+            <meta charset="utf-8">
+            <title>jQuery UI Datepicker - Default functionality</title>
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+            <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+            <link rel="stylesheet" href="/resources/demos/style.css">
+            <script>
+            $(function() {
+              $( "#startdatepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+              $( "#enddatepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+            });
+            </script>
+          </head>
+          <body>
+          <%= form_for(assignment) do |f| %>
+            <%= f.label :active_at do %>
+              <span class="field-label">Open Date/Time</span> <%= f.text_field :active_at, required: true, value: db_datetime_string(assignment.active_at), id:"startdatepicker" %>
+            <% end %>
+
+            <%= f.label :due_at do %>
+              <span class="field-label">Due Date/Time</span> <%= f.text_field :due_at, required: true, value: db_datetime_string(assignment.due_at), id: "enddatepicker" %>
+            <% end %>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </body>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <%= link_to '<i class="fa fa-edit" title="Take Assignment"></i>'.html_safe, assignment_path(assignment) %>
 <% else %>
   <i class="fa fa-edit muted" title="Take Assignment"></i>
