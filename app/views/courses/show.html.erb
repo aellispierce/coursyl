@@ -207,6 +207,7 @@
               <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
             </td>
           </tr>
+          <%= render partial: "modal", locals: {assignment: a} %>
         <% end %>
       </table>
     <% else %>

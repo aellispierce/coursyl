@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery-ui
  *= require font-awesome
  *= require_tree .
  */
@@ -137,4 +138,3 @@ td.text-right, th.text-right {
 .bold {
   font-weight: bold;
 }
-

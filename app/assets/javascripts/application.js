@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require d3
 //= require_tree .
@@ -20,8 +21,7 @@ $(function() {
   $(".new-association").on("click", addRow);
   $("#update_course_button").on("click", disableButton);
   $(".delete-association").on("click", deleteSection);
-  $( "#startdatepicker" ).datepicker({dateFormat: "yy-mm-dd"});
-  $( "#enddatepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+  $( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
 });
 
 function disableButton() {

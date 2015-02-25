@@ -1,0 +1,20 @@
+<div class="modal fade" id="myModal-<%= assignment.id %>" >
+  <div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel"><%= assignment.name %></h4>
+  </div>
+  <div class="modal-body">
+    <%= form_for(assignment) do |f| %>
+    <%= f.label :active_at do %>
+    <span class="field-label">Open Date/Time</span> <%= f.text_field :active_at, required: true, value: db_datetime_string(assignment.active_at), class:"datepicker" %>
+    <% end %>
+
+    <%= f.label :due_at do %>
+    <span class="field-label">Due Date/Time</span> <%= f.text_field :due_at, required: true, value: db_datetime_string(assignment.due_at), class: "datepicker" %>
+    <% end %>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>
